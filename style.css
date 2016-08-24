@@ -1,0 +1,443 @@
+/*----------Styling Reset----------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*------------------ LAYOUT STYLING ----------------------*/
+
+img {
+	max-width: 100%;
+	display: inline-block;
+	margin: 0;
+	vertical-align: top;
+}
+
+/*---- CONTAINING ELEMENTS ----*/
+
+.wrapper {
+	width: 1024px;
+	padding: 0 30px;
+	margin: 0 auto;
+}
+
+.grid {
+	overflow: auto;
+}
+
+@media all and (max-width: 1024px) {
+
+	.wrapper {
+		max-width: 100%;
+	}
+}
+
+/*---- GRID STYLING ----*/
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+.content {
+	float: left;
+}
+
+.sidebar {
+	float: right;
+	margin-top: 10px;
+}
+
+.col-main {
+	width: 66%;
+}
+
+.col-sb {
+	width: 30%;
+}
+
+.col-one-third {
+	width: 33.33%;
+}
+
+.col-two-thirds {
+	width: 66.66%;
+}
+
+.feat-pgs {
+	display: flex;
+	flex-direction: row;
+	margin: 20px 0;
+}
+
+.page {
+	padding: 5%;
+	text-align: center;
+}
+
+.page-first {
+	border-right: 2px dashed grey;
+}
+
+.page-last {
+	border-left: 2px dashed grey;
+}
+
+.page h2 {
+	margin: 10px 0;
+}
+
+.page p {
+	margin-bottom: 10px;
+}
+
+@media all and (max-width: 500px) {
+
+	.content {
+		width: 100%;
+	}
+}
+
+.jumbotron {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 300px;
+	border: 2px solid grey;
+	text-align: center;
+}
+
+@media all and (max-width: 600px) {
+
+	.feat-pgs {
+		flex-direction: column;
+	}
+
+	.page-first,
+	.page-last {
+		border: none;
+	}
+
+	.col-one-third {
+		width: 100%;
+	}
+}
+
+/*---- HEADER ----*/
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+@media all and (max-width: 600px) {
+
+	.header {
+		flex-direction: column;
+	}
+}
+
+.header-mid {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header-right {
+	display: flex;
+	float: right;
+	align-items: flex-end;
+	flex-wrap: wrap;
+}
+
+.header-right img {
+	display: inline-block;
+}
+
+@media all and (max-width: 500px) {
+
+	.header-right {
+		display: none;
+	}
+}
+
+/*---- NAVIGATION ----*/
+
+.nav-bar {
+	width: 100%;
+	display: inline-block;
+	height: 50px;
+}
+
+.nav-list {
+	max-width: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-around;
+}
+
+.nav-bar ul {
+	background-color: grey;
+}
+
+.nav-bar a {
+	padding: .8em 3em;
+	background-color: grey;
+	color: #fff;
+}
+
+.nav-bar a:hover {
+	color: #fff;
+	background-color: black;
+	transition: background-color 1s;
+}
+
+@media all and (max-width: 600px) {
+
+	.nav-bar a {
+		padding: .8em 5%;
+	}
+}
+
+@media all and (max-width: 350px) {
+
+	.nav-bar a {
+		font-size: 12px;
+	}
+}
+
+/*---- SIDEBAR ---*/
+
+.sb-item {
+	border-bottom: 2px dashed grey;
+	padding: 1.3em 5px;
+	color: grey;
+}
+
+.sb-center {
+	border-left: 2px solid grey;
+}
+
+.last {
+	border-bottom: none;
+}
+
+.cta {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 10px;
+	border: 2px solid grey;
+}
+
+.sb-item:hover {
+	color: #fff;
+	background-color: grey;
+	transition: color 600ms, background-color 600ms;
+}
+
+
+@media all and (max-width: 500px) {
+
+	.sidebar {
+		display: none;
+	}
+}
+
+/*---- BUTTONS ----*/
+
+.btn {
+	width: 30%;
+	padding: .5em;
+	margin: 5px;
+	border-radius: 10px;
+	color: #fff;
+	background-color: grey;
+	align-self: center;
+}
+
+.btn-sb {
+	width: 50%;
+}
+
+@media all and (max-width: 600px) {
+
+	.btn-sb {
+		width: 80%;
+	}
+}
+
+.btn:hover {
+	color: #fff;
+	background-color: black;
+	transition: color 600ms, background-color 600ms;
+}
+
+/*---- FOOTER ----*/
+
+footer {
+	height: 81px;
+	text-align: center;
+	border-top: 2px solid grey;
+}
+
+footer a {
+	color: grey;
+}
+
+footer a:hover {
+	color: black;
+}
+
+.foot-social {
+	display: none;
+}
+
+.foot-nav-con {
+	width: 60%;
+	margin: 10px auto;
+}
+
+.foot-nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+@media all and (max-width: 500px) {
+
+	.foot-social {
+		display: inline-block;
+	}
+
+	.foot-nav {
+		flex-direction: column;
+	}
+}
+
+/*---- FORMS ----*/
+
+form {
+	margin-left: 10px;
+}
+
+input {
+	border-radius: 5px;
+}
+
+input.submit {
+	border-radius: 10px;
+	margin: 10px 0;
+}
+
+/*------------------- TYPOGRAPHY --------------------------*/
+
+/*---- BASE STYLING ----*/
+
+body {
+	color: grey;
+	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: grey;
+}
+
+h1 {
+	font-size: 36px;
+	line-height: 44px;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 21px;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	font-size: 10px;
+}
+
+strong {
+	font-weight: 400;
+}
+
+cite,
+em {
+	font-style: italic;
+}
+
+a {
+	text-decoration: none;
+	color: blue;
+}
+
+a:hover {
+	color: black;
+}
+
+
+/*-------------------- MISC -------------------------------*/
